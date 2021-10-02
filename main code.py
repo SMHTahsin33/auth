@@ -78,7 +78,7 @@ b1.pack()
 p3 = PhotoImage(file="b1.png")
 
 b2 = Button(root, image=p3, command=call2)
-
+b2.pack()
 
 
 
