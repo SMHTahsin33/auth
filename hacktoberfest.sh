@@ -15,6 +15,11 @@ Amass(){
 Assetfinder(){
     assetfinder --subs-only $1 | sort -u >> $1-passive-tmp.txt
 }
+Subfinder(){
+    subfinder -d $1 -silent >> $1-passive-tmp.txt
+}
+Findomain(){
+    findomain -t $1 -q >> $1-passive-tmp.txt
 #WorkFlow Started
 if [[ -z "$1" ]]
 then
@@ -24,6 +29,10 @@ echo -e "[/] Running 'amass' on the target"
 Amass "$1"
 echo -e "[/] Running 'assetfinder' on the target"
 Assetfinder "$1"
+Subfinder "$1"
+echo -e "[/] Running 'findomain' on the target"
+Findomain "$1"
+echo -e "[/] Running 'crtsh' on the target"
 #Workflow Ended
 echo -e ""
 echo -e "$(wc -l $1-Passive.txt | awk '{print $1}') Subdomains Enumerated : "
