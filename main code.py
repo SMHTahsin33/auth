@@ -85,6 +85,8 @@ b2.pack()
 
 
 
+b2 = Button(root, image=p3, command=call2)
+b2.pack()
 
 
 
