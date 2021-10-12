@@ -1,4 +1,6 @@
 #!/bin/bash
+
+#banner
 echo -e "                   ___  ___   ____            "
 echo -e "                  / _ \/ _ | / __/            "
 echo -e "                 / ___/ __ |_\ \              "
@@ -8,6 +10,7 @@ echo -e "Passive Subdomain Enumeration Script By @SMHTahsin33"
 echo -e ""
 echo -e "[+] Doing Passive Subdomain Enumeration For '$1'"
 echo -e ""
+
 #Passive Subdomain Enumeration Sources Declaration Started
 Amass(){
     amass enum --passive -d $1 -o $1-passive-tmp.txt -silent
@@ -20,7 +23,9 @@ Subfinder(){
 }
 Findomain(){
     findomain -t $1 -q >> $1-passive-tmp.txt
+    
 #WorkFlow Started
+
 if [[ -z "$1" ]]
 then
 echo "Please Provide Input"
@@ -33,11 +38,15 @@ Subfinder "$1"
 echo -e "[/] Running 'findomain' on the target"
 Findomain "$1"
 echo -e "[/] Running 'crtsh' on the target"
+
 #Workflow Ended
+
 echo -e ""
 echo -e "$(wc -l $1-Passive.txt | awk '{print $1}') Subdomains Enumerated : "
 echo -e "$(wc -l $1-Passive-httpx.txt | awk '{print $1}') Subdomains Probed and are Alive"
 echo -e ""
 cat $1-Passive.txt
 echo -e ""
-echo -e "[=]Passive Subdomain Enumeration Done"
+echo -e "[=] Passive Subdomain Enumeration Done"
+
+##Done
