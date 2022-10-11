@@ -1,7 +1,7 @@
 from tkinter import *
 root = Tk()
 root.geometry("300x400")
-root.title("Login")
+root.title("Simple Login")
 root.resizable(0,0)
 
 def call1():
