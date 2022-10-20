@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#banner
+#Banner
 echo -e "                   ___  ___   ____            "
 echo -e "                  / _ \/ _ | / __/            "
 echo -e "                 / ___/ __ |_\ \              "
