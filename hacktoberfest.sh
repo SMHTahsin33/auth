@@ -39,7 +39,7 @@ echo -e "[/] Running 'findomain' on the target"
 Findomain "$1"
 echo -e "[/] Running 'crtsh' on the target"
 
-#Workflow Ended
+#workflow Ended
 
 echo -e ""
 echo -e "$(wc -l $1-Passive.txt | awk '{print $1}') Subdomains Enumerated : "
