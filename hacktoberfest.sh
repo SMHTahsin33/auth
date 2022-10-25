@@ -1,52 +1,25 @@
 #!/bin/bash
-
-#Banner
-echo -e "                   ___  ___   ____            "
-echo -e "                  / _ \/ _ | / __/            "
-echo -e "                 / ___/ __ |_\ \              "
-echo -e "                /_/  /_/ |_/___/              "
-echo -e "                                              "
-echo -e "Passive Subdomain Enumeration Script By @SMHTahsin33"
-echo -e ""
-echo -e "[+] Doing Passive Subdomain Enumeration For '$1'"
-echo -e ""
-
-#Passive Subdomain Enumeration Sources Declaration Started
-Amass(){
-    amass enum --passive -d $1 -o $1-passive-tmp.txt -silent
-}
-Assetfinder(){
-    assetfinder --subs-only $1 | sort -u >> $1-passive-tmp.txt
-}
-Subfinder(){
-    subfinder -d $1 -silent >> $1-passive-tmp.txt
-}
-Findomain(){
-    findomain -t $1 -q >> $1-passive-tmp.txt
-    
-#WorkFlow Started
-
-if [[ -z "$1" ]]
-then
-echo "Please Provide Input"
-else
-echo -e "[/] Running 'amass' on the target"
-Amass "$1"
-echo -e "[/] Running 'assetfinder' on the target"
-Assetfinder "$1"
-Subfinder "$1"
-echo -e "[/] Running 'findomain' on the target"
-Findomain "$1"
-echo -e "[/] Running 'crtsh' on the target"
-
-#workflow Ended
-
-echo -e ""
-echo -e "$(wc -l $1-Passive.txt | awk '{print $1}') Subdomains Enumerated : "
-echo -e "$(wc -l $1-Passive-httpx.txt | awk '{print $1}') Subdomains Probed and are Alive"
-echo -e ""
-cat $1-Passive.txt
-echo -e ""
-echo -e "[=] Passive Subdomain Enumeration Done"
-
-##Done
+# USING ANSI COLORS
+DO="\e[0;49;95m"
+PINK="\e[0;49;35m"
+RED="\e[0;49;31m"
+GREEN="\e[0;49;91m"
+Gcyan="\e[0;49;33m"
+Cyan="\e[0;49;36m"
+STOP="\e[0m"
+#COLOUR DECLARATION END
+#INTRO STARTED
+echo -e "${Gcyan}"
+echo " "
+echo "    ___         __              "
+echo "   /   | ____ _/ /_  ____ ______"
+echo "  / /| |/ __  / __ \/ __  / ___/"
+echo " / ___ / /_/ / / / / /_/ / /    "
+echo "/_/  |_\__, /_/ /_/\__,_/_/     "
+echo "      /____/                    "
+echo -e "${STOP}"
+echo -e "${Cyan}"
+echo "[*] A Tool for Active, Passive and Permuted Subdomain Enumeration"
+echo "[*] Author Mehedi Hasan Remon (@mehedi1194)"
+echo -e "${STOP}"
+#INTRO ENDS
