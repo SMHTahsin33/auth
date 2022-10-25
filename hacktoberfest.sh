@@ -23,3 +23,17 @@ echo "[*] A Tool for Active, Passive and Permuted Subdomain Enumeration"
 echo "[*] Author Mehedi Hasan Remon (@mehedi1194)"
 echo -e "${STOP}"
 #INTRO ENDS
+Checking all requirments
+echo " "
+echo -e "${Gcyan}[#] Checking all necessary tools installed or not${STOP}"
+
+echo " "
+type -P subenum &>/dev/null && echo -e "${GREEN}[*] SubEnum     YES${STOP}" || echo -e "${RED}[*] SubEnum     NO${STOP}"
+type -P assetfinder &>/dev/null && echo -e "${GREEN}[*] Assetfinder YES${STOP}" || echo -e "${RED}[*] Assetfinder NO${STOP}"
+type -P findomain &>/dev/null && echo -e "${GREEN}[*] Findomain   YES${STOP}" || echo -e "${RED}[*] Findomain   NO${STOP}"
+type -P subfinder &>/dev/null && echo -e "${GREEN}[*] Subfinder   YES${STOP}" || echo -e "${RED}[*] Subfinder   NO${STOP}"
+type -P amass &>/dev/null && echo -e "${GREEN}[*] Amass       YES${STOP}" || echo -e "${RED}[*] Amass       NO${STOP}"
+type -P massdns &>/dev/null && echo -e "${GREEN}[*] MassDns     YES${STOP}" || echo -e "${RED}[*] MassDns     NO${STOP}"
+type -P altdns &>/dev/null && echo -e "${GREEN}[*] AltDns      YES${STOP}" || echo -e "${RED}[*] AltDns      NO${STOP}"
+echo " "
+echo -e "${Gcyan}[*] Check all.txt yourself${STOP}"
