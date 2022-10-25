@@ -101,3 +101,36 @@ cat $1.final.resolved.ip | awk '{print $3}' | sort -u | grep -oE "\b([0-9]{1,3}\
 echo " "
 echo -e "${Gcyan}[*] Generating CNAME list so you can run subdomain takeover tools${STOP}"
 cat $tfile.CNAME $1.subbrute.CNAME $1.permutation.CNAME | sort -u > $1.final.CNAME
+echo " "
+echo -e "${Gcyan}[*] Removing all extra files${STOP}"
+
+rm $tfile
+rm $tfile.A
+rm $tfile.A2
+rm $tfile.A3
+rm $1.subbrute
+rm $tfile.CNAME
+rm $tfile.CNAME2
+rm $tfile.CNAME3
+rm $1.subbrute.A
+rm $1.permute.out
+rm $1.subbrute.A3
+rm $1.subbrute.A2
+rm $1.subbrute.CNAME
+rm $1.active.passive
+rm $1.subbrute.CNAME2
+rm $1.subbrute.CNAME3
+rm $1.permutation.CNAME
+rm $1.final.resolved.ip
+rm $1.permutation.CNAME3
+rm $1.permutation.CNAME2
+rm $1.permutation.resolve
+rm $1.permutation.resolved2
+rm $1.permutation.resolved3 
+
+echo " "
+echo -e "${Cyan}"
+echo "[*] Subdomain Enumeration Process Completed"
+echo "[*] Rest Of The Processing Has To Be Done Manually"
+echo "[*] Allah Hafiz"
+echo -e "${STOP}"
